@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/stefpap/aoc2021/d1p1"
+	"github.com/stefpap/aoc2021/day2/d2p2"
 )
 
 func main()  {
-	d1p1.Run()
+	d2p2.Run()
 }
