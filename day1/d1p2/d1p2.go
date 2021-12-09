@@ -9,7 +9,7 @@ import (
 
 const (
 	// measurements or test
-	file = "measurements"
+	file                 = "measurements"
 	numberOfMeasurements = 3
 )
 
@@ -17,7 +17,7 @@ type measurements []int
 
 type d1p2 struct {
 	scanner *bufio.Scanner
-	three measurements
+	three   measurements
 }
 
 func Run() {
@@ -29,7 +29,7 @@ func Run() {
 
 	c := &d1p2{
 		scanner: bufio.NewScanner(measurementsFile),
-		three: make(measurements, 3),
+		three:   make(measurements, 3),
 	}
 
 	var times, scanned int
@@ -65,7 +65,7 @@ func (c *d1p2) getScanned() int {
 	var err error
 	currentMeasurement, err = strconv.Atoi(c.scanner.Text())
 	if err != nil {
-		log.Fatalf("atoi: %v",err)
+		log.Fatalf("atoi: %v", err)
 	}
 	return currentMeasurement
 }

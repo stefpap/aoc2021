@@ -14,13 +14,13 @@ const (
 )
 
 func Run() {
-	measurements, err := os.Open("day2/d2p2/"+file+".txt")
+	measurements, err := os.Open("day2/d2p2/" + file + ".txt")
 	if err != nil {
 		log.Fatal("open: ", err)
 	}
 	defer measurements.Close()
 
-	var depth, horizon,aim  int
+	var depth, horizon, aim int
 	scanner := bufio.NewScanner(measurements)
 	for scanner.Scan() {
 		cmd := strings.Split(scanner.Text(), " ")
@@ -45,5 +45,5 @@ func Run() {
 			log.Fatalf("unknown cmd: %s", cmd)
 		}
 	}
-	log.Printf("depth: %d * horizon: %d = %d", depth, horizon, depth* horizon)
+	log.Printf("depth: %d * horizon: %d = %d", depth, horizon, depth*horizon)
 }

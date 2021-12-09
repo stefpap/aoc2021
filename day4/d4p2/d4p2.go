@@ -15,11 +15,12 @@ const (
 
 type cell struct {
 	visited bool
-	number int
+	number  int
 }
+
 // wrong 27270
 func Run() {
-	measurements, err := os.Open("day4/d4p2/"+file+".txt")
+	measurements, err := os.Open("day4/d4p2/" + file + ".txt")
 	if err != nil {
 		log.Fatal("open: ", err)
 	}
@@ -37,14 +38,14 @@ func Run() {
 				tableWon[tableNumber] = true
 
 				if allWon(tableWon) {
-					log.Println(sumUnvisited(&tables[tableNumber]) , number, sumUnvisited(&tables[tableNumber]) * number)
-					log.Printf("Winner is table: %d, output: %d\n", tableNumber, sumUnvisited(&tables[tableNumber]) * number)
+					log.Println(sumUnvisited(&tables[tableNumber]), number, sumUnvisited(&tables[tableNumber])*number)
+					log.Printf("Winner is table: %d, output: %d\n", tableNumber, sumUnvisited(&tables[tableNumber])*number)
 					goto Exit
 				}
 			}
 		}
 	}
-	Exit:
+Exit:
 }
 
 func allWon(won []bool) bool {
@@ -112,7 +113,7 @@ func readTables(scanner *bufio.Scanner) [][5][5]cell {
 			continue
 		}
 
-		row := strings.Split(strings.Join(strings.Fields(scanner.Text())," "), " ")
+		row := strings.Split(strings.Join(strings.Fields(scanner.Text()), " "), " ")
 		table[rowNumber] = [5]cell{
 			cell{number: parseInt(row[0])},
 			cell{number: parseInt(row[1])},
@@ -149,7 +150,7 @@ func readNumbers(scanner *bufio.Scanner) []int {
 	return numbers
 }
 
-func printTable (table [5][5]cell) {
+func printTable(table [5][5]cell) {
 	for _, row := range table {
 		log.Println(row[0], row[1], row[2], row[3], row[4])
 	}

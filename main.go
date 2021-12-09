@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/stefpap/aoc2021/day4/d4p2"
+	"github.com/stefpap/aoc2021/day6/d6p1"
 )
 
-func main()  {
-	d4p2.Run()
+func main() {
+	d6p1.Run()
 }
