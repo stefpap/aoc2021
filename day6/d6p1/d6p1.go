@@ -27,7 +27,6 @@ func Run() {
 	start := time.Now()
 	for day := 0; day < days; day++ {
 		dayPassed(&lanternfish)
-		//log.Printf("After %d day: %v\n", day, lanternfish)
 	}
 	sum := 0
 	for _, v := range lanternfish {
